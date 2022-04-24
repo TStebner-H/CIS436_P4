@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.InputFragment">
+
+    <Spinner
+        android:id="@+id/spinnerStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/longText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Longitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStyle" />
+
+    <EditText
+        android:id="@+id/latText"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="Latitude"
+        app:layout_constraintBottom_toBottomOf="@+id/longText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/longText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tvZoomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Zoom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/longText" />
+
+    <TextView
+        android:id="@+id/tvBearingLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Bearing"
+        app:layout_constraintEnd_toEndOf="@+id/tvZoomLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvZoomLabel" />
+
+    <TextView
+        android:id="@+id/tvPitchLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Pitch"
+        app:layout_constraintEnd_toEndOf="@+id/tvBearingLable"
+        app:layout_constraintTop_toBottomOf="@+id/tvBearingLable" />
+
+    <SeekBar
+        android:id="@+id/zoomBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="22"
+        android:min="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tvZoomLabel"
+        app:layout_constraintEnd_toStartOf="@+id/zoomValue"
+        app:layout_constraintStart_toEndOf="@+id/tvZoomLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvZoomLabel" />
+
+    <SeekBar
+        android:id="@+id/bearingBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="360"
+        android:min="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBearingLable"
+        app:layout_constraintEnd_toStartOf="@+id/bearingBarValue"
+        app:layout_constraintStart_toEndOf="@+id/tvBearingLable"
+        app:layout_constraintTop_toTopOf="@+id/tvBearingLable" />
+
+    <SeekBar
+        android:id="@+id/pitchBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="60"
+        android:min="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPitchLable"
+        app:layout_constraintEnd_toStartOf="@+id/pitchBarValue"
+        app:layout_constraintStart_toEndOf="@+id/tvPitchLable"
+        app:layout_constraintTop_toTopOf="@+id/tvPitchLable" />
+
+    <TextView
+        android:id="@+id/zoomValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tvZoomLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvZoomLabel" />
+
+    <TextView
+        android:id="@+id/bearingBarValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBearingLable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvBearingLable" />
+
+    <TextView
+        android:id="@+id/pitchBarValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPitchLable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPitchLable" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPitchLable" />
+</androidx.constraintlayout.widget.ConstraintLayout>

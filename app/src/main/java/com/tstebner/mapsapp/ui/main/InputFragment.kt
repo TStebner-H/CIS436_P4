@@ -7,20 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tstebner.mapsapp.R
+import com.tstebner.mapsapp.databinding.InputFragmentBinding
 
-class MainFragment : Fragment() {
+class InputFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = InputFragment()
     }
 
+    private lateinit var binding: InputFragmentBinding
     private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.input_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
