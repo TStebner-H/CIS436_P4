@@ -27,9 +27,10 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
         android:minHeight="48dp"
-        android:text="Longitude"
+        android:hint="Longitude"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerStyle" />
 
@@ -39,9 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
         android:minHeight="48dp"
-        android:text="Latitude"
+        android:hint="Latitude"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/longText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/longText"
@@ -54,6 +56,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="Zoom"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/longText" />
 
@@ -63,6 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Bearing"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tvZoomLabel"
         app:layout_constraintTop_toBottomOf="@+id/tvZoomLabel" />
 
@@ -72,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Pitch"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tvBearingLable"
         app:layout_constraintTop_toBottomOf="@+id/tvBearingLable" />
 
@@ -120,6 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tvZoomLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvZoomLabel" />
@@ -130,6 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tvBearingLable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvBearingLable" />
@@ -140,6 +147,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tvPitchLable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvPitchLable" />
