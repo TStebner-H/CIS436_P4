@@ -50,14 +50,19 @@ class MainActivity : AppCompatActivity(), InputFragment.InputListener {
         val dim = viewModel.getDim()
         val token = viewModel.getToken()
 
-        val url = "https://api.mapbox.com/styles/v1/mapbox/$style/static/$lon,$lat,$zoom,$bear,$pitch/${dim}x$dim?access_token=$token"
+        if (lon < -180 || lon > 180) {
+            Toast.makeText(this, "Longitude must be between -180 and 180", Toast.LENGTH_LONG).show()
+        } else if (lat < -85 || lat > 85) {
+            Toast.makeText(this, "Latitude must be between -85 and 85", Toast.LENGTH_LONG).show()
+        } else {
+            val url = "https://api.mapbox.com/styles/v1/mapbox/$style/static/$lon,$lat,$zoom,$bear,$pitch/${dim}x$dim?access_token=$token"
 
-        // creates a small popup to display the data, we can keep/remove this if wanted
-        Toast.makeText(this, "Style: $style, Lon: $lon, Lat: $lat\n" +
-                "Zoom: $zoom, Bear: $bear, Pitch: $pitch", Toast.LENGTH_LONG).show()
+            // creates a small popup to display the data, we can keep/remove this if wanted
+            Toast.makeText(this, "Style: $style, Lon: $lon, Lat: $lat\n" +
+                    "Zoom: $zoom, Bear: $bear, Pitch: $pitch", Toast.LENGTH_LONG).show()
 
-        val display = supportFragmentManager.findFragmentById((R.id.mapFrag)) as MapFragment
-        display.updateDisplay(url, dim)
-
+            val display = supportFragmentManager.findFragmentById((R.id.mapFrag)) as MapFragment
+            display.updateDisplay(url, dim)
+        }
     }
 }
