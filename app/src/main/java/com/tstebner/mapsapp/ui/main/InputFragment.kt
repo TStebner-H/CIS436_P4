@@ -16,6 +16,7 @@ import java.lang.ClassCastException
 
 class InputFragment : Fragment() {
 
+    // default values
     var style = "satellite-v9"
     var zoom = 0
     var bear = 0

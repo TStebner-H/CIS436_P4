@@ -12,6 +12,7 @@ class MainViewModel : ViewModel() {
     private var bear: Int = 0
     private var pitch: Int = 0
 
+    // constants
     private val dim: Int = 650
     private val token = "pk.eyJ1IjoianN0ZWJuZXIiLCJhIjoiY2wyY3FlNzJxMGQ3czNqcm0ydmlqaGxmYyJ9.MXVjVMQqnVR2CqXe9lk9fg"
 

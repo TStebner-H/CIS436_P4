@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(), InputFragment.InputListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        submitClicked()
+        submitClicked() // display default map on launch and keep map on orientation change
     }
 
     // pull the data from the viewModel and send to mapFragment
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity(), InputFragment.InputListener {
      * -Jordan
     */
     override fun submitClicked(){
+        // grab parameters from viewmodel
         val style = viewModel.getStyle()
         val lon = viewModel.getLon()
         val lat = viewModel.getLat()
