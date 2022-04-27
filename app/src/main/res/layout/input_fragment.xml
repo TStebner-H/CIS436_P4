@@ -88,7 +88,7 @@
         android:max="22"
         android:min="0"
         app:layout_constraintBottom_toBottomOf="@+id/tvZoomLabel"
-        app:layout_constraintEnd_toStartOf="@+id/zoomValue"
+        app:layout_constraintEnd_toStartOf="@+id/zoomBarValue"
         app:layout_constraintStart_toEndOf="@+id/tvZoomLabel"
         app:layout_constraintTop_toTopOf="@+id/tvZoomLabel" />
 
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toTopOf="@+id/tvPitchLable" />
 
     <TextView
-        android:id="@+id/zoomValue"
+        android:id="@+id/zoomBarValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

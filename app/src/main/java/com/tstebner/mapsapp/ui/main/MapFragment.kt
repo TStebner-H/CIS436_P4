@@ -16,6 +16,8 @@ import com.tstebner.mapsapp.databinding.MapFragmentBinding
 
 class MapFragment : Fragment() {
 
+    // is this used for the API validation?
+    private val TOKEN = "pk.eyJ1IjoianN0ZWJuZXIiLCJhIjoiY2wyY3FlNzJxMGQ3czNqcm0ydmlqaGxmYyJ9.MXVjVMQqnVR2CqXe9lk9fg"
     private val dim = 400
 
     companion object {
@@ -36,7 +38,7 @@ class MapFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
     }
 
     fun updateDisplay(url: String) {
