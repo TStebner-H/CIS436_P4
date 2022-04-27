@@ -17,12 +17,7 @@ class MainActivity : AppCompatActivity(), InputFragment.InputListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-    }
-
-    // check the green comments below please -Galen
-    override fun onGetMap(url: String) {
-        val display = supportFragmentManager.findFragmentById((R.id.mapFrag)) as MapFragment
-        display.updateDisplay(url)
+        submitClicked()
     }
 
     // pull the data from the viewModel and send to mapFragment
@@ -35,6 +30,14 @@ class MainActivity : AppCompatActivity(), InputFragment.InputListener {
      * for some reason, call the getter functions like below. viewModel is already instantiated
      * in MapFragment, so you're all good to just use the get() functions.
      * -Galen
+     *
+     * I removed onGetMap() since just doing everything in the submitClicked function makes
+     * everything less messy, plus the name was probably a bad choice on my part lol.
+     * I also moved values like dimension and token into the viewmodel to make it easier to change
+     * later if needed.
+     * Thanks for all your help man, I completely neglected the viewmodel when first working on
+     * this app but honestly having the viewmodel makes things a lot easier.
+     * -Jordan
     */
     override fun submitClicked(){
         val style = viewModel.getStyle()
@@ -43,9 +46,17 @@ class MainActivity : AppCompatActivity(), InputFragment.InputListener {
         val zoom = viewModel.getZoom()
         val bear = viewModel.getBear()
         val pitch = viewModel.getPitch()
+        val dim = viewModel.getDim()
+        val token = viewModel.getToken()
+
+        val url = "https://api.mapbox.com/styles/v1/mapbox/$style/static/$lon,$lat,$zoom,$bear,$pitch/${dim}x$dim?access_token=$token"
 
         // creates a small popup to display the data, we can keep/remove this if wanted
         Toast.makeText(this, "Style: $style, Lon: $lon, Lat: $lat\n" +
                 "Zoom: $zoom, Bear: $bear, Pitch: $pitch", Toast.LENGTH_LONG).show()
+
+        val display = supportFragmentManager.findFragmentById((R.id.mapFrag)) as MapFragment
+        display.updateDisplay(url, dim)
+
     }
 }

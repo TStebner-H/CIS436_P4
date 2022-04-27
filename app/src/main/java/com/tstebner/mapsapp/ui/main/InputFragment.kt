@@ -16,16 +16,12 @@ import java.lang.ClassCastException
 
 class InputFragment : Fragment() {
 
-
-    val TOKEN = "pk.eyJ1IjoianN0ZWJuZXIiLCJhIjoiY2wyY3FlNzJxMGQ3czNqcm0ydmlqaGxmYyJ9.MXVjVMQqnVR2CqXe9lk9fg"
-    val dim = 400
     var style = "satellite-v9"
     var zoom = 0
     var bear = 0
     var pitch = 0
 
     interface InputListener {
-        fun onGetMap(url: String)
         fun submitClicked()
     }
 
